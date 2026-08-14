@@ -205,12 +205,12 @@
             color: #120A05;
             font-family: 'OldStandardTT', serif;
             font-style: italic;
-            font-size: 4.54rem;
+            font-size: 3.86rem; /* было 4.54rem, уменьшено на 15% */
             letter-spacing: -0.02em;
         }
 
         .names-3-rows span:nth-child(2) {
-            font-size: 3.37rem;
+            font-size: 2.86rem; /* было 3.37rem, уменьшено на 15% */
             color: #7D7064;
             opacity: 1;
             margin: -6px 0 -6px 12px;
@@ -371,14 +371,14 @@
         }
 
         .timeline-time-col {
-            width: 33%;
+            width: 26%; /* было 33% — колонка уже, разделитель сдвинут ближе к времени */
             flex-shrink: 0;
             text-align: center;
         }
 
         .timeline-time {
             font-family: 'Ceremonious One', cursive;
-            font-size: 3.9rem;
+            font-size: 3.1rem; /* было 3.9rem — время чуть меньше */
             line-height: 1;
             color: #341F1C;
             display: block;
@@ -387,8 +387,8 @@
         .timeline-content {
             flex: 1;
             text-align: left;
-            padding-left: 14px;
-            border-left: 1px solid rgba(255,255,255,0.25);
+            padding-left: 18px; /* было 14px — доп. сдвиг разделителя/текста вправо */
+            border-left: 1px solid rgba(255,255,255,0.25); /* сама вертикальная полоса-разделитель */
         }
 
         .timeline-title {
@@ -454,6 +454,36 @@
             height: 100%;
             object-fit: cover;
             object-position: center 25%;
+        }
+
+        /* Коллаж из 2 фото с перекрытием (блок 3) */
+        .photo-collage-2 {
+            position: relative;
+            width: 85%;
+            height: 300px;
+            margin: 15px auto 40px auto;
+        }
+
+        .collage-photo-left,
+        .collage-photo-right {
+            position: absolute;
+            width: 64%;
+            height: 250px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.25);
+            overflow: hidden;
+        }
+
+        .collage-photo-left {
+            left: 0;
+            top: 0;
+            z-index: 2;
+        }
+
+        .collage-photo-right {
+            right: 0;
+            top: 45px;
+            z-index: 1;
         }
 
         /* Collage of 4 photos (block 7: women / men looks) */
@@ -756,8 +786,13 @@
 
         <!-- БЛОК 3 -->
         <div class="glass-block">
-            <div class="photo-container" style="width: 75.3%; height: 294px; margin: 15px auto;">
-                <img src="Photo2.jpeg" alt="" class="photo-img">
+            <div class="photo-collage-2">
+                <div class="collage-photo-left">
+                    <img src="Photo2.jpeg" alt="" class="photo-img">
+                </div>
+                <div class="collage-photo-right">
+                    <img src="Photo3.jpeg" alt="" class="photo-img">
+                </div>
             </div>
             <div class="f-cormorant title-large" style="font-size: 2rem; margin-top: 25px;">РОДНЫЕ И БЛИЗКИЕ!</div>
             <div class="f-ceremonious" style="line-height: 0.73;">Мы решили пожениться</div>
@@ -766,8 +801,8 @@
         <!-- Наложение инициалов АА -->
         <div class="initials-divider">
             <div class="initials-box">
-                <span class="char-d">А</span>
-                <span class="char-e">А</span>
+                <span class="char-d">Р</span>
+                <span class="char-e">М</span>
             </div>
         </div>
 
@@ -834,8 +869,8 @@
         <!-- Наложение инициалов АА -->
         <div class="initials-divider">
             <div class="initials-box">
-                <span class="char-d">А</span>
-                <span class="char-e">А</span>
+                <span class="char-d">Р</span>
+                <span class="char-e">М</span>
             </div>
         </div>
 
@@ -847,13 +882,11 @@
             </div>
             
             <p class="f-gothic" style="margin-top: 10px; font-size: 0.9rem; opacity: 0.9;">
-                Мы очень ждём и готовимся к нашему незабываемому дню! 
-Чтобы воспоминания о свадьбе были положительными, а фотографии уникальными, мы просим вас быть в костюмах и платьях ради нас — мы это ценим и обещаем классные танцы до упаду (а не до пота на футболках)! 
-Конкретного стиля нет, но есть одно железное правило: мы хотим видеть вас красивыми, а не загорелыми (следы от шорт мы все равно не оценим).
-                </div>
-            </div>
+                Мы очень ждём и готовимся к нашему незабываемому дню!<br><br>
+                Чтобы воспоминания о свадьбе были положительными, а фотографии уникальными, мы просим вас быть в костюмах и платьях ради нас — мы это ценим и обещаем классные танцы до упаду (а не до пота на футболках)!<br><br>
+                Конкретного стиля нет, но есть одно железное правило: мы хотим видеть вас красивыми, а не загорелыми (следы от шорт мы все равно не оценим).
+            </p>
         </div>
-   </div>
 
         <!-- БЛОК 8 -->
         <div class="glass-block auto-height" style="text-align: center;">
@@ -874,6 +907,13 @@
 Будем рады вашим улыбкам, поздравлениям, присутствию в этой важный день♡
 Если хотите поддержать нашу семью - будем счастливы получить ваш вклад в симпатичном конверте, спасибо вам!</p>
              </div>
+
+   <div style="margin-bottom: 20px;">
+                <div class="f-cormorant" style="font-size: 1.1rem; font-weight: bold; margin-bottom: 5px; text-align: center;">ДЕТИ</div>
+                <p class="f-gothic" style="font-size: 0.9rem; opacity: 0.85;">Мы очень хотим, чтобы вы могли полностью расслабиться, никуда не спешить и сполна насладиться этим вечером.<br><br>Именно поэтому мы приняли решение сделать нашу свадьбу событием только для взрослых. Пусть этот день станет для вас романтичным выходным без родительских забот!</p>
+            </div>
+
+            <p class="f-gothic" style="font-size: 0.9rem; opacity: 0.85; font-style: italic; margin-top: 10px;">P.S. Можно поднаваливать кринжа.</p>
 
         </div>
 
